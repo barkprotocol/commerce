@@ -1,33 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BARK - eCommerce dApp
+
+## Overview
+
+**BARK** is a decentralized eCommerce application built on the Solana blockchain and integrated with Stripe for seamless payment processing. This dApp allows users to browse products, add them to their cart, and complete purchases using both Solana (SOL) and traditional currencies like USD. With a focus on user experience and blockchain technology, BARK aims to revolutionize online shopping by combining the benefits of decentralization with the convenience of established payment systems.
+
+## Features
+
+- **Decentralized Marketplace**: Buy and sell products using Solana blockchain technology.
+- **Payment Integration**: Process payments through Stripe, supporting both cryptocurrency and traditional currencies.
+- **Responsive Design**: Fully responsive UI for an optimal experience on both desktop and mobile devices.
+- **Secure Transactions**: Utilize blockchain for transparent and secure transactions.
+
+## Technologies Used
+
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
+- **PostCSS**: Tool for transforming CSS with JavaScript plugins.
+- **Solana**: Blockchain protocol for decentralized applications.
+- **Stripe**: Payment processing platform.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [Stripe Account](https://stripe.com) for payment integration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/barkprotocol/bark-ecommerce-dapp.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd bark
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Configuration
 
-## Learn More
+1. Create a `.env.local` file in the root of the project.
+2. Add the required environment variables (update with your actual values):
+   ```env
+   USDC_DEV_PUBLIC_KEY=your_usdc_public_key
+   BARK_PUBLIC_KEY=your_bark_public_key
+   SOL_DEV_PUBLIC_KEY=your_sol_public_key
+   NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your_stripe_public_key
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Building for Production
+
+1. Build the project:
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+2. Start the production server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+## Usage
+
+Navigate through the application to:
+- **Browse Products**: View a catalog of products available for purchase.
+- **Add to Cart**: Select products and add them to your shopping cart.
+- **Checkout**: Complete your purchase using SOL or traditional currencies via Stripe.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push the branch to your fork (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Solana Documentation](https://docs.solana.com/)
+- [Stripe Documentation](https://stripe.com/docs)
 
 ## Deploy on Vercel
 
