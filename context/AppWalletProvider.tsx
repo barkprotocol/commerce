@@ -12,7 +12,7 @@ import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
   LedgerWalletAdapter,
-  WalletConnectAdapter, // Import WalletConnectAdapter
+  // WalletConnectAdapter, // Remove this if not available
 } from "@solana/wallet-adapter-wallets";
 // Uncomment if needed
 // import { UnsafeBurnerWalletAdapter } from "@solana/wallet-adapter-wallets";
@@ -45,11 +45,11 @@ export default function AppWalletProvider({
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
       new LedgerWalletAdapter(),
-      new WalletConnectAdapter({
-        options: {
-          qrcode: true, // Enable QR code scanning
-        },
-      }),
+      // new WalletConnectAdapter({ // Remove or update this
+      //   options: {
+      //     qrcode: true, // Enable QR code scanning
+      //   },
+      // }),
       // Uncomment if you need to use UnsafeBurner
       // new UnsafeBurnerWalletAdapter(),
     ],
