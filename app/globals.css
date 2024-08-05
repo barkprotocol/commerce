@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Anton&family=Poppins:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Define custom properties for light and dark modes */
+:root {
+  --foreground-light: #333;
+  --background-start-light: #ffffff;
+  --background-end-light: #f5f5f5;
+
+  --foreground-dark: #e0e0e0;
+  --background-start-dark: #121212;
+  --background-end-dark: #1e1e1e;
+
+  --orange: #ff5722;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e1e1e;
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  --button-primary-bg: var(--orange);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #f5f5f5;
+  --button-secondary-text: var(--orange);
+  --button-disabled-bg: #d3d3d3;
+  --button-disabled-text: #a0a0a0;
+}
+
+/* Body styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--foreground-light);
+  background: linear-gradient(
+      to bottom,
+      var(--background-start-light),
+      var(--background-end-light)
+    );
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark mode styles */
+.dark body {
+  color: var(--foreground-dark);
+  background: linear-gradient(
+      to bottom,
+      var(--background-start-dark),
+      var(--background-end-dark)
+    );
+}
+
+/* Button styles */
+button, .btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 0.5rem; /* 8px */
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem; /* Default size */
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.btn-primary:hover {
+  background-color: #e64a19; /* Slightly darker orange for hover */
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border: 1px solid var(--button-secondary-text);
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0; /* Slight color change on hover */
+}
+
+/* Disabled button */
+.btn-disabled {
+  background-color: var(--button-disabled-bg);
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+  background-color: var(--button-disabled-bg);
+  transform: none; /* No transform on hover */
+}
+
+/* Logo */
+.logo {
+  font-family: 'Anton', sans-serif;
+  color: var(--orange);
+  font-size: 2.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #e64a19; /* Slightly darker orange for hover */
+}
+
+/* Card Component */
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.card-dark {
+  background-color: var(--card-bg-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0; /* Subtle color change on hover */
+}
+
+.card-header {
+  padding: 1.5rem;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-light {
+    background-color: #fafafa;
+  }
+
+  .bg-dark {
+    background-color: #171717;
+  }
+
+  .text-orange {
+    color: var(--orange);
+  }
+
+  .border-orange {
+    border-color: var(--orange);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-light);
+  }
+
+  .shadow-card-dark {
+    box-shadow: var(--shadow-dark);
+  }
+}
+
+/* Font styles */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+  }
+  
+  p, a, span {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Responsive design tweaks */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+  }
+
+  .card-header {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-xl {
+    font-size: 1.25rem;
+  }
+
+  .text-2xl {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text-3xl {
+    font-size: 2.25rem;
+  }
+}
+
+/* Additional styles for interactive elements */
+button, a {
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover, a:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+button:focus, a:focus {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
