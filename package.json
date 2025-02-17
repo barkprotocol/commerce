@@ -26,7 +26,7 @@
     "countries-list": "^3.1.1",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.3.21",
-    "next": "14.2.5",
+    "next": "14.2.24",
     "pino-pretty": "^11.2.2",
     "react": "^18",
     "react-confetti": "^6.1.0",
